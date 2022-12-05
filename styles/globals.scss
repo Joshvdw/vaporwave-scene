@@ -1,0 +1,128 @@
+@import "./fonts", "./variables";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+.canvas_wrapper {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: -10;
+  background-color: rgba(0, 0, 0, 0.975);
+}
+
+.dom {
+  height: 1000vh;
+}
+
+// ::-webkit-scrollbar {
+//     display: none;
+// }
+
+h1, h3, h2 {
+  text-transform: uppercase;
+  letter-spacing: .5rem;
+  visibility: hidden;
+  // margin-top: -30px;
+  color: rgba(93,92,245,.5);
+  // background: linear-gradient(90deg, rgb(32, 189, 98) 0%, rgba(249,123,165,1) 35%, rgba(93,92,245,1) 100%);;
+  // background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  // text-shadow:  2px 2px 40px rgba(0, 0, 0, 1);
+  // text-align: left;
+}
+
+.error_message_container {
+  position: fixed;
+
+  height: 100vh;
+  width: 100vw;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+
+  opacity: 1;
+  background-color: #0d111d;
+}
+
+.error_message_text {
+  // margin-top: 15vh;
+  text-align: center;
+  width: 37.5vw;
+  opacity: 0.7;
+  @media screen and (max-width: $tablet-screen-width) {
+    width: 80vw;
+  }
+}
+
+p {
+  color: white;
+}
+
+.preloader {
+  height: 100vh;
+  width: 100vw;
+  z-index: 150;
+  background-color: black;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.reveal {
+  animation: reveal 1s ease-in-out forwards;
+  pointer-events: none;
+}
+
+.loading {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
